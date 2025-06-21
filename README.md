@@ -21,15 +21,17 @@ be used with little to no setup but is still fully customizable!
 ## Features
 
 Use the stock slider or customize:
-* Built in padding for convenience
-* Adjustable size transition
-* Use any widget for a start/end icon and center label
-* Use any transition duration and curve
-* Provide any shape border for the progress bar
-* Use the normalized progress value or easily provide a min/max to be automatically transformed
-* Animate start and end icons using slider progress
-* Color the slider's porgress with a gradient
-* Create any number of discrete segments to slide through
+
+- **Horizontal and vertical orientations** - Choose between horizontal or vertical slider direction
+- Built in padding for convenience
+- Adjustable size transition
+- Use any widget for a start/end icon and center label
+- Use any transition duration and curve
+- Provide any shape border for the progress bar
+- Use the normalized progress value or easily provide a min/max to be automatically transformed
+- Animate start and end icons using slider progress
+- Color the slider's porgress with a gradient
+- Create any number of discrete segments to slide through
 
 ## Getting started
 
@@ -41,11 +43,14 @@ dependencies:
 ```
 
 Then import:
+
 ```dart
 import 'package:interactive_slider/interactive_slider.dart';
 ```
 
 ## Usage
+
+### Horizontal Slider (Default)
 
 ```dart
 InteractiveSlider(
@@ -55,6 +60,22 @@ InteractiveSlider(
   min: 1.0,
   max: 15.0,
   onChanged: (value) => setState(() => _value = value),
+)
+```
+
+### Vertical Slider
+
+```dart
+SizedBox(
+  height: 300, // Specify height for vertical sliders
+  child: InteractiveSlider(
+    direction: Axis.vertical,
+    startIcon: const Icon(CupertinoIcons.brightness_solid),
+    endIcon: const Icon(CupertinoIcons.brightness),
+    min: 0.0,
+    max: 100.0,
+    onChanged: (value) => setState(() => _brightness = value),
+  ),
 )
 ```
 
