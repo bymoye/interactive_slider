@@ -271,6 +271,8 @@ class _InteractiveSliderState extends State<InteractiveSlider> {
     _height.dispose();
     _opacity.dispose();
     _defaultProgress.dispose();
+    _progress.removeListener(_onChanged);
+
     super.dispose();
   }
 
